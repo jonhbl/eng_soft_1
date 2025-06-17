@@ -1,0 +1,40 @@
+Sisteam de Biblioteca
+
+Gerenciamento e manutenção de livros.
+
+Temos três tipos de usuários
+* Aluno de graduação
+* Aluno de Pós-graduação
+* Professores.
+
+Realizam atividades com livros:
+* Empréstimo
+* Devolução
+* Reserva
+
+Um livro pode possuir mais de um exemplar.
+
+Cada livro possui:
+* Código de identificação
+* Título
+* Editora
+* Autores
+* Edição
+* Ano de publicação 
+
+Cada usuário possui:
+* Código de indentificação
+* Nome
+
+Emprestimo:
+Como temos aluno, aluno_pos e professor, cada um terá uma regra para empréstimo.
+O tempo também difere:
+Aluno - 4 dias
+Aluno Pos - 5 dias
+Professor - 8 dias
+Sempre que um empréstimo é solicitado, a operação é registrada no sistema.
+Registramos também a data de devolução em função do prazo.
+
+Reserva:
+A operação de reserva garante prioridade apenas entre alunos.
+As reservas também são registradas no sistema, incluindo a data que foi feita.
