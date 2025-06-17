@@ -18,4 +18,15 @@ public class Usuario {
     public String getId() {
         return id;
     }
+
+    public void realizarReserva(Reserva reserva) {
+        reservas.add(reserva);
+    }
+
+    public void realizarEmprestimo(Emprestimo emprestimo) {
+        emprestimos.add(emprestimo);
+    }
+
+    public abstract int getTempoDeEmprestimo();
+
 }
