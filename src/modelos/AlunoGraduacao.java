@@ -1,19 +1,18 @@
-package proj_final_eng_soft;
+package modelos;
 
 public class AlunoGraduacao extends Aluno {
-
 
     public AlunoGraduacao(String nome, String id) {
         super(nome, id);
     }
 
     @Override
-    public int getTempoEmprestimo() {
-        return 4; // Responde com o valor
+    public int getTempoDeEmprestimo() {
+        return 4;
     }
 
     @Override
-    public int getLimiteEmprestimo() {
+    public int getLimiteDeEmprestimo() {
         return 2;
     }
 

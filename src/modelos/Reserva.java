@@ -1,4 +1,4 @@
-package proj_final_eng_soft;
+package modelos;
 
 public class Reserva {
 
@@ -10,6 +10,10 @@ public class Reserva {
         this.usuario = usuario;
         this.livro = livro;
         this.dataReserva = dataReserva;
+    }
+
+    public boolean estaReservadoPorUsuario(Usuario usuario) {
+        return this.usuario.equals(usuario);
     }
 
 }

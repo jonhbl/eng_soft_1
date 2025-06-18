@@ -1,7 +1,12 @@
-package proj_final_eng_soft;
+package projeto;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import modelos.Emprestimo;
+import modelos.Livro;
+import modelos.Reserva;
+import modelos.Usuario;
 
 public class Repositorio {
 

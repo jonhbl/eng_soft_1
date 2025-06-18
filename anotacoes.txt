@@ -23,8 +23,10 @@ Cada livro possui:
 * Ano de publicação 
 
 Cada usuário possui:
-* Código de indentificação
+* Código de indentificação (inputado ou gerado?)
 * Nome
+* lista de reserva
+* lista de emprestimos atuais e passados?*
 
 Emprestimo:
 Como temos aluno, aluno_pos e professor, cada um terá uma regra para empréstimo.
@@ -38,3 +40,6 @@ Registramos também a data de devolução em função do prazo.
 Reserva:
 A operação de reserva garante prioridade apenas entre alunos.
 As reservas também são registradas no sistema, incluindo a data que foi feita.
+
+Padroes:
+
