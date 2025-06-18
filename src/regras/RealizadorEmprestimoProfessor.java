@@ -6,36 +6,26 @@ import modelos.Livro;
 import modelos.Reserva;
 import modelos.Usuario;
 
-public class RealizadorEmprestimoAluno implements IRealizadorEmprestimo {
+public class RealizadorEmprestimoProfessor implements IRealizadorEmprestimo {
 
     @Override
     public void realizarEmprestimo(Usuario usuario, Livro livro) {
         boolean condicaoUsuarioDevedor = usuario.estaDevedor();
-        boolean condicaoUsuarioLimite = usuario.atingiuLimiteDeEmprestimos();
         boolean condicaoLivroEmprestado = usuario.estaComLivro(livro);
         boolean condicaoLivro = livro.temExemplaresDisponiveis();
         boolean condicaoLivroReservadoPorUsuario = livro.estaReservadoPorUsuario(usuario);
 
         if (condicaoUsuarioDevedor) {
             throw new RuntimeException("Usuario está com empréstimos atrasados.");
-        } else if (condicaoUsuarioLimite) {
-            throw new RuntimeException("Usuario atingiu o limite de empréstimos.");
         } else if (!condicaoLivro) {
             throw new RuntimeException("Livro não possui exemplares disponíveis.");
         } else if (condicaoLivroEmprestado) {
             throw new RuntimeException("Usuario já está com o livro emprestado.");
         }
 
-        int numDisponiveis = livro.getQuantidadeDisponivel();
-        int numReservas = livro.getQuantidadeReservas();
-
-        if (numReservas >= numDisponiveis) {
-            if (condicaoLivroReservadoPorUsuario) {
-                Reserva reserva = livro.getReservaPorUsuario(usuario);
-                livro.removerReserva(reserva);
-            } else {
-                throw new RuntimeException("Livro já está reservado por outro(s) usuário(s).");
-            }
+        if (condicaoLivroReservadoPorUsuario) { // Faz sentido ele fazer reserva?
+            Reserva reserva = livro.getReservaPorUsuario(usuario);
+            livro.removerReserva(reserva);
         }
 
         Exemplar exemplar = livro.getExemplarDisponivel();

@@ -55,6 +55,10 @@ public class Livro {
         return quantidade;
     }
 
+    public int getQuantidadeReservas() {
+        return reservas.size();
+    }
+
     public boolean estaReservadoPorUsuario(Usuario usuario) {
         for (Reserva reserva : reservas) {
             if (reserva.estaReservadoPorUsuario(usuario)) {
@@ -71,12 +75,6 @@ public class Livro {
             }
         }
         return null;
-    }
-
-    public boolean estaReservado() {
-        int quantidadeReservas = reservas.size();
-        int quantidadeDisponivel = getQuantidadeDisponivel();
-        return quantidadeReservas >= quantidadeDisponivel;
     }
 
     public void adicionarReserva(Reserva reserva) {
